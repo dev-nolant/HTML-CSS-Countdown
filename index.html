@@ -1,0 +1,110 @@
+<style>
+
+  h1 {
+    position: absolute; left: center; top: -100;
+    background: inherit;
+    text-align: right;
+    padding: 15px; 
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 200px;
+    font: 1 Sans-serif, cursive;
+
+    filter: invert(1) grayscale(1) contrast(100) drop-shadow(0.05em 0.05em black);
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+  
+
+  
+  #countdown {
+    color: white;
+  }
+  
+  #countdown span {
+    position: relative; top: 360; left: -275%;
+    font-size: 50px;
+    text-align: center;
+    font-weight: normal;
+  }
+  body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #cf0cb5,#07bfec, #116ca8);
+    background-size: 400% 400%;
+    animation: gradient 15s infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+</style>
+<h1>
+Under Construction!
+</h1>
+<div class="container">
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div id="main">
+<div class="content">
+<div id="countdown">
+  
+</div><!-- /#Countdown Div -->
+</div> <!-- /.Counter Div -->
+</div> <!-- /.Content Div -->
+</div> <!-- /#Main Div -->
+</div> <!-- /.Columns Div -->
+</div> <!-- /.Row Div -->
+</div> <!-- /.Container Div -->
+<script>
+// set the date we're counting down to
+var target_date = new Date('May, 5, 2021').getTime();
+ 
+// variables for time units
+var days, hours, minutes, seconds;
+ 
+// get tag element
+var countdown = document.getElementById('countdown');
+ 
+// update the tag with id "countdown" every 1 second
+setInterval(function () {
+ 
+    // find the amount of "seconds" between now and target
+    var current_date = new Date().getTime();
+    var seconds_left = (target_date - current_date) / 1000;
+ 
+    // do some time calculations
+    days = parseInt(seconds_left / 86400);
+    seconds_left = seconds_left % 86400;
+     
+    hours = parseInt(seconds_left / 3600);
+    seconds_left = seconds_left % 3600;
+     
+    minutes = parseInt(seconds_left / 60);
+    seconds = parseInt(seconds_left % 60);
+     
+    // format countdown string + set tag value
+    countdown.innerHTML = '<span class="days">' + days +  ' <b>Days</b><br /></span> <span class="hours">' + hours + ' <b>Hours</b><br /></span> <span class="minutes">'
+        + minutes + ' <b>Minutes</b><br /></span> <span class="seconds">' + seconds + ' <b>Seconds</b></span>';  
+ 
+}, 1000);
+</script>
